@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDown, Download, Code, Coffee } from 'lucide-react';
-import ThreeBackground from './ThreeBackground';
-import { useScrollAnimations } from './ScrollAnimations';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { ChevronDown, Download, Code, Coffee } from "lucide-react";
+import ThreeBackground from "./ThreeBackground";
+import { useScrollAnimations } from "./ScrollAnimations";
 
 const Hero = () => {
   useScrollAnimations();
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const titles = [
-    'Full Stack Developer',
-    'Backend Specialist',
-    'Frontend Designer',
-    'Problem Solver',
-    'Tech Enthusiast'
+    "Full Stack Developer",
+    "Backend Specialist",
+    "Frontend Designer",
+    "Problem Solver",
+    "Tech Enthusiast",
   ];
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Hero = () => {
 
       if (!isDeleting && updatedText === currentTitle) {
         setTimeout(() => setIsDeleting(true), 1000);
-      } else if (isDeleting && updatedText === '') {
+      } else if (isDeleting && updatedText === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
       }
@@ -47,10 +47,13 @@ const Hero = () => {
   }, [text, isDeleting, loopNum, typingSpeed, titles]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* 3D Background */}
       <ThreeBackground />
-      
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div
@@ -61,7 +64,7 @@ const Hero = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
           className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"
         />
@@ -73,7 +76,7 @@ const Hero = () => {
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
           className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full blur-xl"
         />
@@ -128,9 +131,11 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Results-driven full stack developer with <span className="text-blue-400 font-semibold">2.7 years</span> of experience 
-            building dynamic, scalable web applications. Passionate about creating exceptional user experiences 
-            with modern technologies.
+            Results-driven full stack developer with{" "}
+            <span className="text-blue-400 font-semibold">2.7 years</span> of
+            experience building dynamic, scalable web applications. Passionate
+            about creating exceptional user experiences with modern
+            technologies.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -141,7 +146,11 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)" }}
+              onClick={() => window.open("/resume.pdf", "_blank")}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
             >
@@ -176,7 +185,7 @@ const Hero = () => {
               <div className="text-gray-400">Technologies</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">50+</div>
+              <div className="text-3xl font-bold text-green-400">10+</div>
               <div className="text-gray-400">Projects</div>
             </div>
           </motion.div>

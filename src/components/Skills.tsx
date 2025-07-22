@@ -1,62 +1,62 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Database, Globe, Server, Settings, Zap } from 'lucide-react';
-import { useScrollAnimations } from './ScrollAnimations';
+import React from "react";
+import { motion } from "framer-motion";
+import { Code, Database, Globe, Server, Settings, Zap } from "lucide-react";
+import { useScrollAnimations } from "./ScrollAnimations";
 
 const Skills = () => {
   useScrollAnimations();
-  
+
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: "Frontend",
       icon: Globe,
-      color: 'from-blue-500 to-cyan-500',
+      color: "from-blue-500 to-cyan-500",
       skills: [
-        { name: 'React.js', level: 90 },
-        { name: 'Vue.js', level: 85 },
-        { name: 'Nuxt.js', level: 80 },
-        { name: 'JavaScript', level: 92 },
-        { name: 'TypeScript', level: 88 },
-        { name: 'TailwindCSS', level: 90 }
-      ]
+        { name: "React.js", level: 90 },
+        { name: "Vue.js", level: 85 },
+        { name: "Nuxt.js", level: 80 },
+        { name: "JavaScript", level: 92 },
+        { name: "TypeScript", level: 88 },
+        { name: "TailwindCSS", level: 90 },
+      ],
     },
     {
-      title: 'Backend',
+      title: "Backend",
       icon: Server,
-      color: 'from-green-500 to-emerald-500',
+      color: "from-green-500 to-emerald-500",
       skills: [
-        { name: 'Golang', level: 85 },
-        { name: 'Node.js', level: 90 },
-        { name: 'Express.js', level: 88 },
-        { name: 'REST APIs', level: 92 },
-        { name: 'JWT & RBAC', level: 85 },
-        { name: 'Testing', level: 80 }
-      ]
+        { name: "Golang", level: 85 },
+        { name: "Node.js", level: 90 },
+        { name: "Express.js", level: 88 },
+        { name: "REST APIs", level: 92 },
+        { name: "JWT & RBAC", level: 85 },
+        { name: "Testing", level: 80 },
+      ],
     },
     {
-      title: 'Database',
+      title: "Database",
       icon: Database,
-      color: 'from-purple-500 to-pink-500',
+      color: "from-purple-500 to-pink-500",
       skills: [
-        { name: 'MySQL', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
-        { name: 'MongoDB', level: 88 },
-        { name: 'Redis', level: 75 },
-        { name: 'Database Design', level: 85 }
-      ]
+        { name: "MySQL", level: 85 },
+        { name: "PostgreSQL", level: 82 },
+        { name: "MongoDB", level: 88 },
+        { name: "Redis", level: 75 },
+        { name: "Database Design", level: 85 },
+      ],
     },
     {
-      title: 'DevOps & Tools',
+      title: "DevOps & Tools",
       icon: Settings,
-      color: 'from-orange-500 to-red-500',
+      color: "from-orange-500 to-red-500",
       skills: [
-        { name: 'Docker', level: 80 },
-        { name: 'Git', level: 90 },
-        { name: 'NGINX', level: 75 },
-        { name: 'AWS', level: 70 },
-        { name: 'CI/CD', level: 75 }
-      ]
-    }
+        { name: "Docker", level: 80 },
+        { name: "Git", level: 90 },
+        { name: "NGINX", level: 75 },
+        { name: "AWS", level: 70 },
+        { name: "CI/CD", level: 75 },
+      ],
+    },
   ];
 
   return (
@@ -89,18 +89,26 @@ const Skills = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className={`p-3 rounded-full bg-gradient-to-r ${category.color} bg-opacity-20`}>
+                <div
+                  className={`p-3 rounded-full bg-gradient-to-r ${category.color} bg-opacity-20`}
+                >
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {category.title}
+                </h3>
               </div>
 
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-gray-400 text-sm">{skill.level}%</span>
+                      <span className="text-gray-300 font-medium">
+                        {skill.name}
+                      </span>
+                      <span className="text-gray-400 text-sm">
+                        {skill.level}%
+                      </span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <motion.div
@@ -111,8 +119,12 @@ const Skills = () => {
                         className={`h-2 rounded-full bg-gradient-to-r ${category.color} relative overflow-hidden`}
                       >
                         <motion.div
-                          animate={{ x: ['-100%', '100%'] }}
-                          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                          animate={{ x: ["-100%", "100%"] }}
+                          transition={{
+                            repeat: Infinity,
+                            duration: 2,
+                            ease: "linear",
+                          }}
                           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                         />
                       </motion.div>
@@ -132,10 +144,19 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Technology Stack</h3>
+          <h3 className="text-2xl font-bold text-white text-center mb-8">
+            Technology Stack
+          </h3>
           <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6">
             {[
-              'Golang', 'Node.js', 'React', 'Vue.js', 'TypeScript', 'Docker', 'MongoDB', 'PostgreSQL'
+              "Golang",
+              "Node.js",
+              "React",
+              "Vue.js",
+              "TypeScript",
+              "Docker",
+              "MongoDB",
+              "PostgreSQL",
             ].map((tech, index) => (
               <motion.div
                 key={index}
@@ -164,10 +185,10 @@ const Skills = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { metric: '50+', label: 'Projects Completed', icon: Code },
-            { metric: '15+', label: 'Technologies Mastered', icon: Zap },
-            { metric: '2.7+', label: 'Years Experience', icon: Settings },
-            { metric: '100%', label: 'Client Satisfaction', icon: Globe }
+            { metric: "10+", label: "Projects Completed", icon: Code },
+            { metric: "15+", label: "Technologies Mastered", icon: Zap },
+            { metric: "2.7+", label: "Years Experience", icon: Settings },
+            { metric: "100%", label: "Client Satisfaction", icon: Globe },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -175,7 +196,9 @@ const Skills = () => {
               className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center"
             >
               <item.icon className="w-8 h-8 mx-auto mb-3 text-blue-400" />
-              <div className="text-2xl font-bold text-white mb-1">{item.metric}</div>
+              <div className="text-2xl font-bold text-white mb-1">
+                {item.metric}
+              </div>
               <div className="text-gray-400 text-sm">{item.label}</div>
             </motion.div>
           ))}

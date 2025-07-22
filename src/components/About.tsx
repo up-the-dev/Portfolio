@@ -1,19 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, BookOpen, MapPin, Calendar } from 'lucide-react';
-import { useScrollAnimations } from './ScrollAnimations';
+import React from "react";
+import { motion } from "framer-motion";
+import { Award, BookOpen, MapPin, Calendar } from "lucide-react";
+import { useScrollAnimations } from "./ScrollAnimations";
 
 const About = () => {
   useScrollAnimations();
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -22,9 +22,9 @@ const About = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
@@ -61,7 +61,7 @@ const About = () => {
             <div className="relative">
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  src="profilepic.jpeg"
                   alt="Umesh Pawar"
                   className="w-full h-full object-cover"
                 />
@@ -113,15 +113,22 @@ const About = () => {
             className="space-y-6"
           >
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white">Software Developer</h3>
+              <h3 className="text-2xl font-bold text-white">
+                Software Developer
+              </h3>
               <p className="text-gray-300 leading-relaxed">
-                I'm a passionate full-stack developer with expertise in modern web technologies. 
-                Currently working at <span className="text-blue-400 font-semibold">Techorizon IT Services Pvt Ltd</span> 
-                in Pune, I specialize in building scalable applications using Golang, Node.js, and React.
+                I'm a passionate full-stack developer with expertise in modern
+                web technologies. Currently working at{" "}
+                <span className="text-blue-400 font-semibold">
+                  Techorizon IT Services Pvt Ltd{" "}
+                </span>
+                in Pune, I specialize in building scalable applications using
+                Golang, Node.js, and React.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                My journey in software development has been driven by a curiosity to solve complex problems 
-                and create meaningful user experiences. I believe in writing clean, maintainable code and 
+                My journey in software development has been driven by a
+                curiosity to solve complex problems and create meaningful user
+                experiences. I believe in writing clean, maintainable code and
                 staying updated with the latest industry trends.
               </p>
             </div>
@@ -134,12 +141,18 @@ const About = () => {
               </h4>
               <div className="space-y-3">
                 <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                  <p className="text-white font-semibold">Masters in Computer Science</p>
+                  <p className="text-white font-semibold">
+                    Masters in Computer Science
+                  </p>
                   <p className="text-blue-400">Currently Pursuing</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                  <p className="text-white font-semibold">Bachelors in Computer Science</p>
-                  <p className="text-gray-400">Dr. Babasaheb Ambedkar Marathwada University</p>
+                  <p className="text-white font-semibold">
+                    Bachelors in Computer Science
+                  </p>
+                  <p className="text-gray-400">
+                    Dr. Babasaheb Ambedkar Marathwada University
+                  </p>
                   <p className="text-green-400 font-semibold">CGPA: 8.7</p>
                 </div>
               </div>
@@ -155,7 +168,9 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-lg p-4 border border-yellow-500/30"
               >
-                <p className="text-white font-semibold">🏆 Hidden Gem Annual Award</p>
+                <p className="text-white font-semibold">
+                  🏆 Hidden Gem Annual Award
+                </p>
                 <p className="text-yellow-400">2024-25</p>
               </motion.div>
             </div>

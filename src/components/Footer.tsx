@@ -1,16 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, Code, Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Heart, Code, Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/up-the-dev', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/umeshpawarsde', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:umeshpawarsde@gmail.com', label: 'Email' },
+    { icon: Github, href: "https://github.com/up-the-dev", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/umeshpawarsde",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:umeshpawarsde@gmail.com", label: "Email" },
   ];
 
   return (
@@ -26,7 +30,8 @@ const Footer = () => {
               Umesh Pawar
             </motion.div>
             <p className="text-gray-400 max-w-md">
-              Full Stack Developer passionate about creating innovative solutions with modern technologies.
+              Full Stack Developer passionate about creating innovative
+              solutions with modern technologies.
             </p>
           </div>
 
@@ -35,11 +40,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <div className="space-y-2">
               {[
-                { name: 'Home', href: '#home' },
-                { name: 'About', href: '#about' },
-                { name: 'Projects', href: '#projects' },
-                { name: 'Skills', href: '#skills' },
-                { name: 'Contact', href: '#contact' }
+                { name: "Home", href: "#home" },
+                { name: "About", href: "#about" },
+                { name: "Projects", href: "#projects" },
+                { name: "Skills", href: "#skills" },
+                { name: "Contact", href: "#contact" },
               ].map((link) => (
                 <motion.a
                   key={link.name}
@@ -72,7 +77,10 @@ const Footer = () => {
                   whileTap={{ scale: 0.95 }}
                   className="p-2 bg-white/5 rounded-full border border-white/10 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <link.icon size={18} className="text-gray-400 hover:text-blue-400 transition-colors" />
+                  <link.icon
+                    size={18}
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  />
                 </motion.a>
               ))}
             </div>
@@ -87,7 +95,7 @@ const Footer = () => {
             <Code className="w-4 h-4 text-blue-400" />
             <span>by Umesh Pawar</span>
           </div>
-          
+
           <div className="text-gray-400 text-sm mt-4 md:mt-0">
             © 2024 Umesh Pawar. All rights reserved.
           </div>

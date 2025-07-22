@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
-import { useScrollAnimations } from './ScrollAnimations';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { useScrollAnimations } from "./ScrollAnimations";
 
 const Projects = () => {
   useScrollAnimations();
@@ -10,44 +10,89 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management and secure payment processing.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-      features: ["User Authentication", "Payment Gateway", "Admin Dashboard", "Real-time Updates"],
+      title: "IoT Data Ingestion & Processing Platform",
+      description:
+        "Designed a centralized and flexible IoT platform for secure data ingestion and real-time processing using MQTT and Kafka.",
+      image:
+        "https://images.pexels.com/photos/256219/pexels-photo-256219.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["Golang", "Kafka", "MQTT", "PostgreSQL"],
+      features: [
+        "Real-time IoT Data Collection",
+        "Kafka-based Message Queuing",
+        "Real-time Data Transformation",
+        "Persistent Data Storage",
+      ],
       github: "https://github.com/up-the-dev",
-      demo: "https://demo.example.com"
+      demo: "https://demo.example.com",
     },
     {
       id: 2,
-      title: "Task Management System",
-      description: "A collaborative project management tool with real-time updates and team collaboration features.",
-      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["Vue.js", "Golang", "PostgreSQL", "WebSocket", "Docker"],
-      features: ["Real-time Collaboration", "Task Tracking", "Team Management", "Analytics"],
+      title: "Centralized Accounting System (Backend)",
+      description:
+        "Built a scalable backend accounting system with custom financial ledger modules, API endpoints, and audit mechanisms.",
+      image:
+        "https://c1.wallpaperflare.com/preview/898/284/844/stock-trading-monitor-desk.jpg",
+      tech: ["Golang", "PostgreSQL", "Redis", "Docker"],
+      features: [
+        "Ledger & Transaction Modules",
+        "RESTful API for Financial Operations",
+        "Audit Trails & Error Handling",
+        "Enterprise-Grade Scalability",
+      ],
       github: "https://github.com/up-the-dev",
-      demo: "https://demo.example.com"
-    },
-    {
-      id: 3,
-      title: "Analytics Dashboard",
-      description: "A comprehensive analytics platform with interactive charts and real-time data visualization.",
-      image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "TypeScript", "D3.js", "Express", "MySQL"],
-      features: ["Interactive Charts", "Real-time Data", "Custom Reports", "Export Features"],
-      github: "https://github.com/up-the-dev",
-      demo: "https://demo.example.com"
+      demo: "https://demo.example.com",
     },
     {
       id: 4,
-      title: "Social Media App",
-      description: "A modern social media platform with real-time messaging and content sharing capabilities.",
-      image: "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["Nuxt.js", "Node.js", "MongoDB", "Socket.io", "AWS"],
-      features: ["Real-time Messaging", "Content Sharing", "User Profiles", "News Feed"],
+      title: "Full-Stack Web Applications",
+      description:
+        "Built 15+ production-ready web applications using modern technologies with scalable architecture and secure authentication systems.",
+      image:
+        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
+      features: [
+        "JWT Authentication",
+        "RBAC Implementation",
+        "REST APIs",
+        "Scalable Architecture",
+      ],
       github: "https://github.com/up-the-dev",
-      demo: "https://demo.example.com"
-    }
+      demo: "https://demo.example.com",
+    },
+    {
+      id: 4,
+      title: "Backend Systems & APIs",
+      description:
+        "Developed robust backend systems with Golang and Node.js, implementing secure REST APIs and database optimization.",
+      image:
+        "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["Golang", "Node.js", "PostgreSQL", "MySQL", "Redis"],
+      features: [
+        "REST API Development",
+        "Database Optimization",
+        "Security Implementation",
+        "Performance Tuning",
+      ],
+      github: "https://github.com/up-the-dev",
+      demo: "https://demo.example.com",
+    },
+    {
+      id: 5,
+      title: "Vue.js & Nuxt.js Applications",
+      description:
+        "Created dynamic frontend applications using Vue.js and Nuxt.js with modern UI/UX design and responsive layouts.",
+      image:
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tech: ["Vue.js", "Nuxt.js", "TypeScript", "TailwindCSS", "Vuex"],
+      features: [
+        "Component Architecture",
+        "State Management",
+        "SSR Implementation",
+        "Responsive Design",
+      ],
+      github: "https://github.com/up-the-dev",
+      demo: "https://demo.example.com",
+    },
   ];
 
   return (
@@ -64,7 +109,8 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A showcase of my latest work, featuring modern web applications built with cutting-edge technologies.
+            A showcase of my latest work, featuring modern web applications
+            built with cutting-edge technologies.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mt-6 rounded-full" />
         </motion.div>
@@ -112,8 +158,12 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
@@ -127,7 +177,11 @@ const Projects = () => {
                 </div>
 
                 <motion.button
-                  onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+                  onClick={() =>
+                    setSelectedProject(
+                      selectedProject === project.id ? null : project.id
+                    )
+                  }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors font-semibold"
@@ -140,15 +194,20 @@ const Projects = () => {
                   {selectedProject === project.id && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
+                      animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                       className="mt-4 pt-4 border-t border-white/10"
                     >
-                      <h4 className="text-lg font-semibold text-white mb-2">Key Features:</h4>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        Key Features:
+                      </h4>
                       <ul className="space-y-1">
                         {project.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-gray-300 flex items-center space-x-2">
+                          <li
+                            key={featureIndex}
+                            className="text-gray-300 flex items-center space-x-2"
+                          >
                             <div className="w-2 h-2 bg-blue-400 rounded-full" />
                             <span>{feature}</span>
                           </li>

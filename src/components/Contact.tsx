@@ -1,16 +1,29 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react';
-import { useScrollAnimations } from './ScrollAnimations';
+import React from "react";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  MessageCircle,
+} from "lucide-react";
+import { useScrollAnimations } from "./ScrollAnimations";
 
 const Contact = () => {
   useScrollAnimations();
-  
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
   const onSubmit = (data: any) => {
-    console.log('Form submitted:', data);
+    console.log("Form submitted:", data);
     // Handle form submission here
     reset();
   };
@@ -18,28 +31,36 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'umeshpawarsde@gmail.com',
-      href: 'mailto:umeshpawarsde@gmail.com'
+      label: "Email",
+      value: "umeshpawarsde@gmail.com",
+      href: "mailto:umeshpawarsde@gmail.com",
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+91 8208709752',
-      href: 'tel:+918208709752'
+      label: "Phone",
+      value: "+91 8208709752",
+      href: "tel:+918208709752",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Pune, India',
-      href: '#'
-    }
+      label: "Location",
+      value: "Pune, India",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/up-the-dev', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/umeshpawarsde', label: 'LinkedIn' },
-    { icon: MessageCircle, href: 'mailto:umeshpawarsde@gmail.com', label: 'Email' },
+    { icon: Github, href: "https://github.com/up-the-dev", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/umeshpawarsde",
+      label: "LinkedIn",
+    },
+    {
+      icon: MessageCircle,
+      href: "mailto:umeshpawarsde@gmail.com",
+      label: "Email",
+    },
   ];
 
   return (
@@ -56,7 +77,8 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
+            Ready to collaborate on your next project? Let's discuss how we can
+            bring your ideas to life.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mt-6 rounded-full" />
         </motion.div>
@@ -71,10 +93,13 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Let's Connect
+              </h3>
               <p className="text-gray-300 leading-relaxed mb-8">
-                I'm always excited to work on new projects and collaborate with talented individuals. 
-                Whether you have a project in mind or just want to say hello, feel free to reach out!
+                I'm always excited to work on new projects and collaborate with
+                talented individuals. Whether you have a project in mind or just
+                want to say hello, feel free to reach out!
               </p>
             </div>
 
@@ -106,7 +131,9 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="pt-8 border-t border-white/10">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Follow Me
+              </h4>
               <div className="flex space-x-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -133,8 +160,10 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Send a Message
+            </h3>
+
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -143,12 +172,14 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    {...register('name', { required: 'Name is required' })}
+                    {...register("name", { required: "Name is required" })}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none text-white placeholder-gray-400 transition-colors"
                     placeholder="Your Name"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-400">{errors.name.message as string}</p>
+                    <p className="mt-1 text-sm text-red-400">
+                      {errors.name.message as string}
+                    </p>
                   )}
                 </div>
 
@@ -158,18 +189,20 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    {...register('email', { 
-                      required: 'Email is required',
+                    {...register("email", {
+                      required: "Email is required",
                       pattern: {
                         value: /^\S+@\S+$/i,
-                        message: 'Invalid email address'
-                      }
+                        message: "Invalid email address",
+                      },
                     })}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none text-white placeholder-gray-400 transition-colors"
                     placeholder="your@email.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-400">{errors.email.message as string}</p>
+                    <p className="mt-1 text-sm text-red-400">
+                      {errors.email.message as string}
+                    </p>
                   )}
                 </div>
               </div>
@@ -180,12 +213,14 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  {...register('subject', { required: 'Subject is required' })}
+                  {...register("subject", { required: "Subject is required" })}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none text-white placeholder-gray-400 transition-colors"
                   placeholder="Project Discussion"
                 />
                 {errors.subject && (
-                  <p className="mt-1 text-sm text-red-400">{errors.subject.message as string}</p>
+                  <p className="mt-1 text-sm text-red-400">
+                    {errors.subject.message as string}
+                  </p>
                 )}
               </div>
 
@@ -194,13 +229,15 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
-                  {...register('message', { required: 'Message is required' })}
+                  {...register("message", { required: "Message is required" })}
                   rows={5}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none text-white placeholder-gray-400 transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-red-400">{errors.message.message as string}</p>
+                  <p className="mt-1 text-sm text-red-400">
+                    {errors.message.message as string}
+                  </p>
                 )}
               </div>
 
