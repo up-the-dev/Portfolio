@@ -18,14 +18,44 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log("Form submitted:", data);
-    // Handle form submission here
-    reset();
+  const onSubmit = async (data: any) => {
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(data.subject);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+      );
+      const mailtoLink = `mailto:umeshpawarsde@gmail.com?subject=${subject}&body=${body}`;
+
+      // Open default email client
+      window.location.href = mailtoLink;
+
+      // Alternative: Send to a backend service (uncomment if you have a backend)
+      // const response = await fetch('/api/contact', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+      //
+      // if (!response.ok) {
+      //   throw new Error('Failed to send message');
+      // }
+
+      // Show success message
+      alert("Thank you for your message! Your email client should open now.");
+      reset();
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert(
+        "Sorry, there was an error sending your message. Please try again or contact me directly at umeshpawarsde@gmail.com"
+      );
+    }
   };
 
   const contactInfo = [
@@ -243,12 +273,15 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className={`w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
+                  isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                }`}
               >
                 <Send size={20} />
-                <span>Send Message</span>
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
               </motion.button>
             </form>
           </motion.div>
