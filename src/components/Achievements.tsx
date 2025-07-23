@@ -71,7 +71,6 @@ const Achievements = () => {
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto mt-6 rounded-full" />
         </motion.div>
-
         {/* Main Achievement - Hidden Gem Award */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -127,7 +126,7 @@ const Achievements = () => {
                   skills and consistent high-quality output."
                 </p>
 
-                {/* Achievement Video Placeholder */}
+                {/* Achievement Video */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="mt-8 relative max-w-md mx-auto"
@@ -169,9 +168,8 @@ const Achievements = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Testimonials Section */}
-        {/* <motion.div
+        {/* Testimonials Section
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -214,7 +212,6 @@ const Achievements = () => {
                   </div>
                 </div>
 
-
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
@@ -228,53 +225,48 @@ const Achievements = () => {
             ))}
           </div>
         </motion.div> */}
-
         {/* Achievement Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-16"
         >
-          {[
-            {
-              icon: Award,
-              value: "1",
-              label: "Major Award",
-              color: "text-yellow-400",
-            },
-            {
-              icon: Star,
-              value: "10+",
-              label: "Projects Delivered",
-              color: "text-blue-400",
-            },
-            {
-              icon: Zap,
-              value: "15+",
-              label: "Technologies",
-              color: "text-green-400",
-            },
-            {
-              icon: Trophy,
-              value: "100%",
-              label: "Client Satisfaction",
-              color: "text-purple-400",
-            },
-          ].map((stat, index) => (
+          <h3 className="text-2xl font-bold text-white text-center mb-8">
+            Recent Recognition
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center"
+              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/30 text-center"
             >
-              <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
-              <div className="text-2xl font-bold text-white mb-1">
-                {stat.value}
+              <div className="flex items-center justify-center space-x-3">
+                <Award className="w-8 h-8 text-yellow-400" />
+                <div>
+                  <p className="text-xl font-bold text-white">
+                    Hidden Gem Annual Award
+                  </p>
+                  <p className="text-yellow-400">2024-25</p>
+                </div>
               </div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
             </motion.div>
-          ))}
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-xl p-6 border border-blue-500/30 text-center"
+            >
+              <div className="flex items-center justify-center space-x-3">
+                <Star className="w-8 h-8 text-blue-400" />
+                <div>
+                  <p className="text-xl font-bold text-white">
+                    Top Performer Award
+                  </p>
+                  <p className="text-blue-400">2023-24</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

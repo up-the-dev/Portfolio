@@ -26,9 +26,9 @@ const Experience = () => {
     {
       type: "education",
       title: "Masters in Computer Science",
-      company: "Currently Pursuing",
+      company: "Dr. Babasaheb Ambedkar Marathwada University",
       location: "India",
-      duration: "2023 - Present",
+      duration: "2023 - 2025",
       description:
         "Advanced studies in software engineering, algorithms, and distributed systems.",
       achievements: [

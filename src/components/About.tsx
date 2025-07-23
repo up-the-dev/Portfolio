@@ -144,7 +144,10 @@ const About = () => {
                   <p className="text-white font-semibold">
                     Masters in Computer Science
                   </p>
-                  <p className="text-blue-400">Currently Pursuing</p>
+                  <p className="text-gray-400">
+                    Dr. Babasaheb Ambedkar Marathwada University
+                  </p>
+                  {/* <p className="text-blue-400">2023-2025</p> */}
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
                   <p className="text-white font-semibold">
