@@ -132,22 +132,38 @@ const Achievements = () => {
                   whileHover={{ scale: 1.02 }}
                   className="mt-8 relative max-w-md mx-auto"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-yellow-500/30 flex items-center justify-center relative overflow-hidden">
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="text-yellow-400"
-                    >
-                      <Star className="w-16 h-16" />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 text-center">
-                      <p className="text-white font-semibold">
-                        Achievement Highlight
-                      </p>
-                      <p className="text-gray-300 text-sm">Recognition Video</p>
+                  <video
+                    className="w-full aspect-video rounded-xl border border-yellow-500/30 object-cover"
+                    controls
+                    poster="/achievement-poster.jpg"
+                    preload="metadata"
+                  >
+                    <source src="/hidden-gem-award.mp4" type="video/mp4" />
+                    <source src="/hidden-gem-award.webm" type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+
+                  {/* Video Overlay Effects */}
+                  <div className="absolute inset-0 rounded-xl border border-yellow-500/30 pointer-events-none">
+                    <div className="absolute top-2 right-2 bg-yellow-500/20 backdrop-blur-sm rounded-full px-2 py-1">
+                      <span className="text-yellow-400 text-xs font-semibold">
+                        🏆 Award
+                      </span>
                     </div>
                   </div>
+
+                  {/* Glowing effect */}
+                  <motion.div
+                    animate={{
+                      boxShadow: [
+                        "0 0 20px rgba(234, 179, 8, 0.3)",
+                        "0 0 40px rgba(234, 179, 8, 0.5)",
+                        "0 0 20px rgba(234, 179, 8, 0.3)",
+                      ],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="absolute inset-0 rounded-xl pointer-events-none"
+                  />
                 </motion.div>
               </div>
             </motion.div>
